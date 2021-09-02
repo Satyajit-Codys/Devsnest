@@ -1,0 +1,25 @@
+Commands I tried:
+
+SUBSCRIBE redisChat : command to subscribe to "redisChat" named channel.
+PUBLISH redisChat "Redis is a great caching technique" : to publish a message in "redisChat" channel.
+
+PSUBSCRIBE r*: this shows all the streams from channels starts with r keyword.
+UNSUBSCRIBE redisChat: this will disconnect the channel.
+
+xadd mystream 1000 name Satya : will add Satya to the stream by 1000 key
+xadd mystream 1001 name Subha :will add Subha to the stream by 1001 key
+xadd mystream 1002 name GOl:  will add GOl to the stream by 1002 key
+xadd mystream * name lalit : will add lalit to the stream by random key
+xadd mystream * name sanchi: will add sanchi to the stream by random key
+  
+xadd mystream maxlen 10000 * name sourav: add sourav to the stream, but the maxlen of the stream will be 10000. That means that will overwrite after reaching the maxlen.
+  
+xread count 200 streams mystream 0: Shows all the data available in mystream   
+
+xread count 200 streams mystream 1002-0 : shows the stream data after 1002-0 key.      
+
+xread block 10000 streams mystream $ : close the connection after 10sec / 10k mili sec.
+    
+xrange mystream - + count 2 : For loop type command, but will return only 2 result as mentioned by the count.
+
+xrevrange mystrean - + count 2 : Reverse for loop type command, but will return only 2 result as mentioned by the count.
