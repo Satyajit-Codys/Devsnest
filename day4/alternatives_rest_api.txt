@@ -1,0 +1,2 @@
+There are many alternatives for REST APIs like FALCOR, gRPC, Apache thrift but the most preferred alternative is graphQL.
+GraphQL is preferred as client has the ability to dictate what exactly they need as an output. Hence it is preferred.
